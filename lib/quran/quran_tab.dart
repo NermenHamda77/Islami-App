@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:islami_app/my_theme/app_colors.dart';
-import 'package:islami_app/quran/sura_widget.dart';
+import 'package:islami_app/quran/sura_item.dart';
 
 class QuranTab extends StatelessWidget {
   List<String> suraNames = [
@@ -247,19 +247,35 @@ class QuranTab extends StatelessWidget {
         ),
         Divider(
           thickness: 3,
-          color: AppColors.primaryLightColor,
+          color: Theme.of(context).primaryColor,
         ),
         SizedBox(height: 5,),
 
-        SuraWidget(
-            suraName: "Sura Name",
-            versesNumber: "Verses Number"
+        Row(
+          children: [
+            Expanded(
+              child: Center(
+                child: Text(
+                  "Sura Name",
+                  style: Theme.of(context).textTheme.bodySmall,
+                ),
+              ),
+            ),
+            Expanded(
+              child: Center(
+                child: Text(
+                  "Verses Number",
+                  style: Theme.of(context).textTheme.bodySmall,
+                ),
+              ),
+            ),
+          ],
         ),
         SizedBox(height: 5,),
 
         Divider(
           thickness: 3,
-          color: AppColors.primaryLightColor,
+          color: Theme.of(context).primaryColor,
         ),
         Expanded(
           flex: 2,
@@ -267,13 +283,15 @@ class QuranTab extends StatelessWidget {
               separatorBuilder: (context, index) {
                 return Divider(
                   thickness: 2,
-                  color: AppColors.primaryLightColor,
+                  color: Theme.of(context).primaryColor,
                 );
               },
               itemBuilder: (context, index) {
-                return SuraWidget(
+                return SuraItem(
                     suraName: suraNames[index],
-                    versesNumber: versesNumber[index].toString());
+                    versesNumber: versesNumber[index].toString(),
+                    index: index,
+                );
               },
               itemCount: suraNames.length),
         ),

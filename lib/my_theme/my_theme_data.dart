@@ -12,6 +12,9 @@ class MyTheme{
       backgroundColor: Colors.transparent,
       elevation: 0,
       centerTitle: true,
+      iconTheme: IconThemeData(
+        color: AppColors.blackColor,
+      )
 
     ),
 
@@ -37,14 +40,20 @@ class MyTheme{
       ),
 
       bodyMedium: TextStyle(
-          fontSize: 24,
-          color: AppColors.blackColor,
-          fontWeight: FontWeight.bold,
-      ),
-      bodySmall: TextStyle(
-          fontSize: 20,
+          fontSize: 25,
           color: AppColors.blackColor,
           fontWeight: FontWeight.w700,
+      ),
+      bodySmall: TextStyle(
+          fontSize: 22,
+          color: AppColors.blackColor,
+          fontWeight: FontWeight.bold,
+
+      ),
+      titleLarge: TextStyle(
+        fontSize: 20,
+        color: AppColors.blackColor,
+        fontWeight: FontWeight.w400,
 
       ),
 
