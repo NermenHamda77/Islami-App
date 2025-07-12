@@ -68,11 +68,11 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
 
 
                 suraDetails.isEmpty ?
-                CircularProgressIndicator(
-                  color: AppColors.whiteColor,
+                Center(
+                  child: CircularProgressIndicator(
+                    color: AppColors.primaryLightColor,
+                  ),
                 ) :
-
-
                 Expanded(
                   child: ListView.separated(
                       itemBuilder: (context , index){
