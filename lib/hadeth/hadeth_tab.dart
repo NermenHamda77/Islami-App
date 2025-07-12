@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 
 import '../my_theme/app_colors.dart';
 import 'hadeth_content.dart';
-import 'item_hadeth_details.dart';
+import 'hadeth_item.dart';
 
 class HadethTab extends StatefulWidget {
   @override
@@ -63,7 +63,7 @@ class _HadethTabState extends State<HadethTab> {
               },
 
               itemBuilder: (context, index) {
-                return ItemHadethDetails(title: ahadethList[index].title);
+                return HadethItem(title: ahadethList[index].title , content: ahadethList[index].content,);
               },
               itemCount: ahadethList.length),
         ),

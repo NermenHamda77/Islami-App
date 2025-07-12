@@ -2,14 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:islami_app/my_theme/app_colors.dart';
 
 class ItemHadethDetails extends StatelessWidget {
-  String title;
-  ItemHadethDetails({required this.title});
+  List<String> content;
+  int index;
+  ItemHadethDetails({required this.content , required this.index});
 
   @override
   Widget build(BuildContext context) {
-    return Text(title ,
+    return Text(content[index] ,
+      textDirection: TextDirection.rtl,
       textAlign: TextAlign.center,
-    style: Theme.of(context).textTheme.bodySmall
-    );
+    style: Theme.of(context).textTheme.titleLarge,);
   }
 }
