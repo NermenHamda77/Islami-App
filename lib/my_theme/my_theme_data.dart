@@ -45,9 +45,9 @@ class MyTheme{
           fontWeight: FontWeight.w700,
       ),
       bodySmall: TextStyle(
-          fontSize: 22,
+          fontSize: 20,
           color: AppColors.blackColor,
-          fontWeight: FontWeight.bold,
+          fontWeight: FontWeight.w700,
 
       ),
       titleLarge: TextStyle(
