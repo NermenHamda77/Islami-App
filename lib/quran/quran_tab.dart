@@ -265,7 +265,7 @@ class QuranTab extends StatelessWidget {
               child: Center(
                 child: Text(
                   "Verses Number",
-                  style: Theme.of(context).textTheme.bodyMedium,
+                  style: Theme.of(context).textTheme.bodySmall,
                 ),
               ),
             ),
