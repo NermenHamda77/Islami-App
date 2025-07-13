@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import '../my_theme/app_colors.dart';
 import 'hadeth_content.dart';
 import 'hadeth_item.dart';
@@ -32,7 +32,7 @@ class _HadethTabState extends State<HadethTab> {
         SizedBox(height: 8,),
         Center(
           child: Text(
-            "Hadeth Name",
+            AppLocalizations.of(context)!.hadeth_name,
             style: Theme.of(context).textTheme.bodySmall,
           ),
         ),
