@@ -55,15 +55,9 @@ class HadethDetailsScreen extends StatelessWidget {
                 SizedBox(height: 15,),
 
                 Expanded(
-                  child: ListView.separated(
+                  child: ListView.builder(
                       itemBuilder: (context , index){
-                        return ItemHadethDetails(content: hadethArgs.content , index: index,);
-                      },
-                      separatorBuilder: (context , index){
-                        return Divider(
-                          thickness: 1,
-                          color: Theme.of(context).primaryColor,
-                        );
+                        return ItemHadethDetails(content: hadethArgs.content[index]);
                       },
                       itemCount: hadethArgs.content.length
                   ),
