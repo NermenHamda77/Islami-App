@@ -55,15 +55,14 @@ class _HadethTabState extends State<HadethTab> {
           flex: 5,
 
           child: ListView.separated(
-              separatorBuilder: (context, index) {
+              itemBuilder: (context, index) {
+                return HadethItem(hadeth: ahadethList[index],);
+              },
+              separatorBuilder: (context , index){
                 return Divider(
                   thickness: 2,
                   color: Theme.of(context).primaryColor,
                 );
-              },
-
-              itemBuilder: (context, index) {
-                return HadethItem(title: ahadethList[index].title , content: ahadethList[index].content,);
               },
               itemCount: ahadethList.length),
         ),
