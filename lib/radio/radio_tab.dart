@@ -27,19 +27,25 @@ class RadioTab extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             Icon(
-              Icons.keyboard_arrow_left,
+              Icons.arrow_back_ios_new_rounded,
               size: 50,
-              color: AppColors.primaryLightColor,
+              color: provider.isDarkMode()
+                  ? AppColors.yellowColor
+                  : AppColors.primaryLightColor,
             ),
             Icon(
               Icons.play_arrow,
               size: 60,
-              color: AppColors.primaryLightColor,
+              color: provider.isDarkMode()
+                  ? AppColors.yellowColor
+                  : AppColors.primaryLightColor,
             ),
             Icon(
-              Icons.keyboard_arrow_right,
+              Icons.arrow_forward_ios_outlined,
               size: 50,
-              color: AppColors.primaryLightColor,
+              color: provider.isDarkMode()
+                  ? AppColors.yellowColor
+                  : AppColors.primaryLightColor,
             ),
           ],
         ),
