@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islami_app/quran/sura_item.dart';
+import 'package:provider/provider.dart';
+
+import '../my_theme/app_colors.dart';
+import '../providers/app_config_provider.dart';
 
 class QuranTab extends StatelessWidget {
   List<String> suraNames = [
@@ -239,18 +243,19 @@ class QuranTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<AppConfigProvider>(context);
     return Column(
       children: [
-        Expanded(
-            flex: 1,
-            child: Image.asset("assets/images/quran_logo.png")
-        ),
+        Expanded(flex: 1, child: Image.asset("assets/images/quran_logo.png")),
         Divider(
-          thickness: 3,
-          color: Theme.of(context).primaryColor,
+          thickness: 2,
+          color: provider.isDarkMode() ?
+          AppColors.yellowColor:
+          AppColors.primaryLightColor,
         ),
-        SizedBox(height: 5,),
-
+        SizedBox(
+          height: 5,
+        ),
         Row(
           children: [
             Expanded(
@@ -271,26 +276,31 @@ class QuranTab extends StatelessWidget {
             ),
           ],
         ),
-        SizedBox(height: 5,),
-
+        SizedBox(
+          height: 5,
+        ),
         Divider(
-          thickness: 3,
-          color: Theme.of(context).primaryColor,
+          thickness: 2,
+          color: provider.isDarkMode() ?
+          AppColors.yellowColor:
+          AppColors.primaryLightColor,
         ),
         Expanded(
           flex: 2,
           child: ListView.separated(
               separatorBuilder: (context, index) {
                 return Divider(
-                  thickness: 2,
-                  color: Theme.of(context).primaryColor,
+                  thickness: 1,
+                  color: provider.isDarkMode() ?
+                  AppColors.yellowColor:
+                  AppColors.primaryLightColor,
                 );
               },
               itemBuilder: (context, index) {
                 return SuraItem(
-                    suraName: suraNames[index],
-                    versesNumber: versesNumber[index].toString(),
-                    index: index,
+                  suraName: suraNames[index],
+                  versesNumber: versesNumber[index].toString(),
+                  index: index,
                 );
               },
               itemCount: suraNames.length),

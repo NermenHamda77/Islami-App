@@ -11,5 +11,8 @@
 "language" : "Language",
 "arabic" : "Arabic",
 "english" : "English",
-"holy_quran_radio" : "Holy Quran Radio"
+"holy_quran_radio" : "Holy Quran Radio",
+"mode" : "Mode",
+"dark" : "Dark",
+"light" : "Light"
 }
