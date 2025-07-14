@@ -47,7 +47,7 @@ class MyTheme{
       bodySmall: TextStyle(
           fontSize: 20,
           color: AppColors.blackColor,
-          fontWeight: FontWeight.w700,
+          fontWeight: FontWeight.w500,
 
       ),
       titleLarge: TextStyle(
@@ -63,4 +63,67 @@ class MyTheme{
 
 
   );
+
+  static final ThemeData darkMode = ThemeData(
+    primaryColor: AppColors.primaryDarkColor,
+    scaffoldBackgroundColor: Colors.transparent,
+
+    // ------------------------------------------------------------------------------
+
+    appBarTheme: AppBarTheme(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        centerTitle: true,
+        iconTheme: IconThemeData(
+          color: AppColors.whiteColor,
+        )
+
+    ),
+
+    // ------------------------------------------------------------------------------
+
+    bottomNavigationBarTheme: BottomNavigationBarThemeData(
+        selectedIconTheme: IconThemeData(
+          color: AppColors.yellowColor,
+          size: 16,
+        ),
+        selectedItemColor: AppColors.yellowColor
+
+    ),
+
+
+    // ------------------------------------------------------------------------------
+
+    textTheme: TextTheme(
+      bodyLarge: TextStyle(
+          fontSize: 30,
+          color: AppColors.whiteColor,
+          fontWeight: FontWeight.bold
+      ),
+
+      bodyMedium: TextStyle(
+        fontSize: 25,
+        color: AppColors.whiteColor,
+        fontWeight: FontWeight.w700,
+      ),
+      bodySmall: TextStyle(
+        fontSize: 20,
+        color: AppColors.whiteColor,
+        fontWeight: FontWeight.w500,
+
+      ),
+      titleLarge: TextStyle(
+        fontSize: 20,
+        color: AppColors.yellowColor,
+        fontWeight: FontWeight.w400,
+
+      ),
+
+    ),
+
+    // ------------------------------------------------------------------------------
+
+
+  );
+
 }

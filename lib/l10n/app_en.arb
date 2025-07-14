@@ -10,5 +10,8 @@
 "settings_label" : "Settings",
 "language" : "Language",
 "arabic" : "Arabic",
-"english" : "English"
+"english" : "English",
+"mode" : "Mode",
+"dark" : "Dark",
+"light" : "Light"
 }
