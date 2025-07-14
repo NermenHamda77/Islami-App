@@ -5,13 +5,13 @@ import 'package:provider/provider.dart';
 import '../my_theme/app_colors.dart';
 import '../providers/app_config_provider.dart';
 
-class LanguageBottomSheet extends StatefulWidget {
+class ModeBottomSheet extends StatefulWidget {
 
   @override
-  State<LanguageBottomSheet> createState() => _LanguageBottomSheetState();
+  State<ModeBottomSheet> createState() => _ModeBottomSheetState();
 }
 
-class _LanguageBottomSheetState extends State<LanguageBottomSheet> {
+class _ModeBottomSheetState extends State<ModeBottomSheet> {
   @override
   Widget build(BuildContext context) {
     var provider = Provider.of<AppConfigProvider>(context);
@@ -22,23 +22,24 @@ class _LanguageBottomSheetState extends State<LanguageBottomSheet> {
         children: [
           InkWell(
             onTap: (){
-              // change language to en
-              provider.changeAppLanguage("en");
+              // change mode to dark
+              provider.changeAppMode(ThemeMode.dark);
 
             },
-            child: provider.appLanguage == "en" ?
-                   getSelectedItem(AppLocalizations.of(context)!.english , provider):
-                   getUnselectedItem(AppLocalizations.of(context)!.english),
+            child: provider.isDarkMode() ?
+                   getSelectedItem(AppLocalizations.of(context)!.dark , provider):
+                   getUnselectedItem(AppLocalizations.of(context)!.dark),
           ),
           SizedBox(height: 15 ,),
           InkWell(
             onTap: (){
-              provider.changeAppLanguage("ar");
+              // change mode to light
+              provider.changeAppMode(ThemeMode.light);
 
             },
-            child: provider.appLanguage == "ar" ?
-            getSelectedItem(AppLocalizations.of(context)!.arabic , provider):
-            getUnselectedItem(AppLocalizations.of(context)!.arabic),
+            child: provider.isDarkMode() ?
+            getUnselectedItem(AppLocalizations.of(context)!.light):
+            getSelectedItem(AppLocalizations.of(context)!.light , provider),
           ),
 
         ],
@@ -59,7 +60,8 @@ class _LanguageBottomSheetState extends State<LanguageBottomSheet> {
         Icon(Icons.check , size: 30,
           color:  provider.isDarkMode() ?
         AppColors.yellowColor:
-        AppColors.primaryLightColor,),
+        AppColors.primaryLightColor,
+        ),
       ],
     );
   }

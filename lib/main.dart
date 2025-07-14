@@ -28,6 +28,8 @@ class MyApp extends StatelessWidget {
       },
       initialRoute: HomeScreen.routeName,
       theme: MyTheme.lightMode,
+      themeMode: provider.appMode,
+      darkTheme: MyTheme.darkMode,
       debugShowCheckedModeBanner: false,
 
       localizationsDelegates: AppLocalizations.localizationsDelegates,
