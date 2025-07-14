@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:islami_app/hadeth/hadeth_content.dart';
 import '../my_theme/app_colors.dart';
 import 'item_hadeth_details.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class HadethDetailsScreen extends StatelessWidget {
   static const String routeName = "hadeth_details_screen";
@@ -21,7 +22,7 @@ class HadethDetailsScreen extends StatelessWidget {
         Scaffold(
           appBar: AppBar(
             title: Text(
-              "Islami",
+              AppLocalizations.of(context)!.app_title,
               style: Theme.of(context).textTheme.bodyLarge,
             ),
           ),
