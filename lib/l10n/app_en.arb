@@ -6,5 +6,9 @@
 "hadeth_label" : "Hadeth",
 "sura_name" : "Sura Name",
 "hadeth_name" : "Hadeth Name",
-"verses_number" : "Verses Number"
+"verses_number" : "Verses Number",
+"settings_label" : "Settings",
+"language" : "Language",
+"arabic" : "Arabic",
+"english" : "English"
 }

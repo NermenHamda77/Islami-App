@@ -6,5 +6,9 @@
 "hadeth_label" : "الحديث",
 "sura_name" : "اسم الصورة",
 "hadeth_name" : "اسم الحديث",
-"verses_number" : "عدد الآيات"
+"verses_number" : "عدد الآيات",
+"settings_label" : "الاعدادات",
+"language" : "اللغة",
+"arabic" : "اللغة العربية",
+"english" : "اللغة الانجليزية"
 }
