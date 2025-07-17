@@ -14,5 +14,7 @@
 "holy_quran_radio" : "إذاعة القرآن الكريم",
 "mode" : "الوضع",
 "dark" : "مظلم",
-"light" : "مضئ"
+"light" : "مضئ",
+"praises_number" : "عدد التسبيحات"
+
 }
