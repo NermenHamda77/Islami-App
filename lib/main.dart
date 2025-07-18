@@ -6,6 +6,7 @@ import 'package:islami_app/providers/app_config_provider.dart';
 import 'package:islami_app/sura_details/sura_details_screen.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 void main() {
   runApp(ChangeNotifierProvider(
       create: (context) => AppConfigProvider(),
@@ -19,6 +20,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var provider = Provider.of<AppConfigProvider>(context);
+    loadSharedPrefsData(provider);
+
     return MaterialApp(
       routes: {
         HomeScreen.routeName : (context) => HomeScreen(),
@@ -37,5 +40,19 @@ class MyApp extends StatelessWidget {
 
       locale: Locale(provider.appLanguage),
     );
+  }
+
+  Future<void> loadSharedPrefsData(AppConfigProvider provider) async{
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    var language = prefs.getString("language");
+    if(language != null){
+      provider.changeAppLanguage(language);
+    }
+    var isDark = prefs.getBool("isDark");
+    if(isDark == true){
+      provider.changeAppMode(ThemeMode.dark);
+    }else if(isDark == false){
+      provider.changeAppMode(ThemeMode.light);
+    }
   }
 }

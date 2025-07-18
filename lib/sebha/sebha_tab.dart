@@ -45,7 +45,7 @@ class _SebhaTabState extends State<SebhaTab>{
                 ),
                 Padding(
                   padding: EdgeInsets.only(
-                      top: MediaQuery.of(context).size.height*0.06
+                      top: MediaQuery.of(context).size.height*0.099
                   ),
                   child: AnimatedRotation(
                     duration: Duration(milliseconds: 300),
